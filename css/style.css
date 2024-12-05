@@ -1,0 +1,439 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Gill Sans", "Segoe UI", "Trebuchet MS", sans-serif;
+    background-image: url(../img/playaH.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+html {
+    width: 100%;
+}
+/*de aqui para abajo tendremos la segunda nav reponsive*/
+nav{
+    /* position: fixed; */
+    width:100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(147, 151, 132, 0.2);
+    box-shadow: 0px 3px 5px 0px rgba(99, 98, 98, 0.75);
+    z-index: 99;
+    transition: all .4s ease;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+nav .btn-menu{
+    display: none;
+    line-height: 50%;
+    font-size: 2rem;
+    padding: 0 2px;
+    cursor: pointer;
+}
+nav ul li{
+    position: relative;
+    margin: 0 20px;
+    list-style: none;
+    padding-bottom: 5px;
+}
+nav ul li::before{
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 0;
+    bottom: 0;
+    transition: all .3s ease;
+}
+nav ul li:hover::before{
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 40px;
+    bottom: 0;  
+    background-color: #fff;/*buen efecto de colocar hover a la li se subraya a medias*/
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a:hover {
+    color: #edf5f2;
+} 
+/* Botón */
+nav .btn button {
+    font-weight: 700;
+    padding: 9px 20px;
+    margin: 0 15px;
+    background: #70b5e2 ;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+nav .btn button:hover {
+    transform: scale(1.2);
+    color: #deeae6;
+    background: rgba(5, 7, 12, 0.5);
+}
+.logo img {
+    height: 50px;
+    width: auto;
+}
+.logo img:hover {
+    transform: scale(1.2);
+    color: #7D8683;
+} 
+
+main {
+    display: flex;  
+    flex-direction: column; 
+    flex-grow: 1; /*Esto asegura que main ocupe el espacio restante disponible*/    
+}
+.card {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction:column;
+    /* justify-content: center; */
+    backdrop-filter: blur(20px);
+    margin-top: auto; 
+    /* align-items:flex-end; */
+    
+}
+.card p{
+    align-items: end;
+    text-align: center;
+    padding: 10px 30px;
+    font-size:2em ;
+}
+.card h1 {
+    text-align: center;
+    margin: 50px 0px;
+    font-size: 2em;
+    align-items: flex-start;
+
+}
+
+/* Footer */
+#footer footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(5, 7, 12, 0.2);
+    padding: 20px;
+    width: 100%;
+    margin-top: auto;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.icon-elem {
+    list-style: none;
+}
+.icon {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: 0.7s;
+}
+footer .icon-elem:hover {
+    transform: scale(1.2);
+    color: #deeae6;
+}
+
+
+/* Menú */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+.social-icon {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.menu-elem {
+    list-style: none;
+}
+.text{
+    display: flex;
+    justify-content: center;
+}
+.menu-icon {
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 10px;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: 0.3s;
+
+}
+.menu-icon:hover {
+    opacity: 1;
+}
+.switch{
+    border-radius: 100px;
+    border: #333 solid 2px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 60px;
+    height: 30px;
+    padding:  0 5px;
+    background-color: black;
+    position: relative;
+    border-radius: 100px;
+    border: #333 solid 2px;
+}
+.switch i{
+    font-size: 1rem;
+    color: #869fd5;
+    /* float: left; */
+}
+
+#fan-sun{
+    color:#000;
+    
+    /* stroke: black; */
+}
+.switch::before{
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: solid thin #000;
+    left: 0;
+    right: unset;
+}
+.switch.active::before{
+    right: 0;
+    left: unset;
+    border: solid thin #fff;
+}
+.switch.active i:first-child{
+    color:#fff; 
+}
+.switch.active{
+    background-color: rgb(251, 235, 8);
+    border: solid 2px #fff;
+}
+body.active .header{
+    background-color: #313131;
+}
+body.active header a{
+    color: #cfcfcf;
+}
+body.active main{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+    );
+    color: #cfcfcf;
+}
+body.active #footer footer{
+    background: black;
+}
+
+
+
+/* /ESTILOS DE SWITCH/ */
+.switch {
+    width: 60px;
+    height: 30px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 100px;
+    border: #333 solid 2px;
+    background-color: #132b41;
+}
+
+.switch i {
+    font-size: 1rem;
+    color: #fdc21c;
+}
+
+.menu-options li:last-child::before {
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: solid thin #000;
+    left: 0;
+    right: unset;
+}
+
+.menu-options li:last-child.active::before {
+    right: 0;
+    left: unset;
+    border: solid thin #fff;
+}
+
+.menu-options li:last-child.active i:first-child {
+    color: #fff;
+}
+
+.menu-options li:last-child.active {
+    background-color: chocolate;
+    border: solid 2px #fff;
+}
+
+body.active nav {
+    background-color: #313131;
+}
+
+body.active nav ul {
+    background-color: #313131;
+}
+
+body.active nav ul li a {
+    color:#cfcfcf;
+}
+
+body.active .header__info {
+    background-color: #2c2c2c;
+}
+
+body.active h1 {
+    color: #fdc21c;
+}
+
+body.active .descripcion {
+    color: #cfcfcf;
+}
+
+body.active main section:first-child {
+    background-color: #313131;
+}
+
+body.active main section:first-child article h2 {
+    color: #fff;
+}
+
+body.active main section:first-child article p {
+    color: #bdbdbd;
+}
+
+body.active main section:nth-child(2) {
+    background-color: #2c2c2c;
+}
+
+body.active main section:nth-child(2) h2 {
+    color: #fff;
+}
+
+body.active main section:nth-child(2) > p{
+    color: #bdbdbd;
+}
+
+/* Media Queries */
+@media screen and (max-width:600px) {
+    html {
+        font-size: 12px;
+    }
+
+    .btn-menu i{
+        background: rgba(5, 7, 12, 0.2);
+    }
+    nav ul {
+        position:absolute;
+        top: 0;
+        z-index: -1;
+        padding-top: 70px;
+        left: 0;
+        right: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        text-align: center;
+        background:#1ea2c7  ;
+        /* background-color: #fcfdff; */
+        flex-direction: column;
+        box-shadow: 0px 3px 1px 0px rgba(99, 98, 98, 0.75);
+        cursor: pointer;
+    }
+
+   nav ul.active {
+        transition: all 1s ease;
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+   }
+
+    nav ul li {
+        margin-bottom: 20px;
+    }
+
+    nav .btn-menu {
+        display: block;
+    }
+}
+
+
+
+/* @media (max-width:928px) {
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-toggle:checked + .hamburger + .nav {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        display: none;
+    }
+
+    .menu-toggle:checked + .hamburger + .menu {
+        display: flex;
+    }
+
+    .menu-elem {
+        margin: 10px 0;
+    }
+}
+ */
+

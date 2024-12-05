@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author Ana Campos" content="Club Estrella de Mar">
+    <meta name="clasification" content="deportes, actividades, familia, club, amistad">
+    <meta name="description" content="Club Estrella de Mar ofrece actividades deportivas para niños entre 2 a 16 años, Tenis, Natacion, Futbol, Basquet, Iniciacion Deportiva, Hokey, Voley, Padel y Mas!">
+    <meta name="keywords" content="Club Estrella, club, amigos, Belgrano, actividades deportivas, colonia de verano, deporte, niños, vacaciones de verano">
+    <link rel="icon" type="image/png" href="img/estrella.png">
+    <link rel="stylesheet" href="css/resgister.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fontawesome/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.css">
+    <title>Estrella de Mar</title>
+</head>
+<body>
+    <div id="nav"></div>
+     <main>
+        <h1>
+            Club Estrella de Mar
+        </h1>
+        <div class="contenedor__todo">
+            <div class="caja__trasera">
+                <div class="caja__trasera-login">
+                    <h3>¿Ya Tienes cuenta?</h3>
+                    <p>Inicia sesión</p>
+                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                </div>
+                <div class="caja__trasera-register">
+                    <h3>¿Aún no tienes cuenta?</h3>
+                    <p>Registrate para iniciar sesión</p>
+                    <button id="btn__registrarse">Registrarse</button>
+                </div>
+            </div>
+            <div class="contenedor__login-register">
+                <!-- Formulario de inicio de sesión -->
+                <form action="" id="formLogin" class="formulario__login">
+                    <h2>Iniciar Sesión</h2>
+                    <input type="email" id="emailLogin" placeholder="Correo Electrónico">
+                    <p class="error" id="erroremailLogin"></p>
+                    <input type="password" id="passwordLogin" placeholder="Contraseña">
+                    <p class="error" id="errorpasswordLogin"></p>
+                    <!-- <button>Entrar</button> -->
+                    <label>
+                        <input type="checkbox" id="terminosLogin"> Acepto los términos y condiciones
+                    </label>
+                    <button id="btnEnviarLogin" disabled>Ingresar</button>
+                </form>
+        
+                <!-- Formulario de registro -->
+                <form action="" id="formRegistro" class="formulario__register">
+                    <h2>Registrarse</h2>
+                    <input type="text" id="nombre" placeholder="Nombre Completo">
+                    <p class="error" id="errorNombre"></p>
+                    <input type="email" id="emailRegistro" placeholder="Correo Electrónico">
+                    <p class="error" id="erroremailRegistro"></p>
+                    <input type="text" id="usuario" placeholder="Usuario">
+                    <p class="error" id="errorUsuario"></p>
+                    <input type="password" id="passwordRegistro" placeholder="Contraseña">
+                    <p class="error" id="errorPasswordRegistro"></p>
+                    <!-- <button>Registrarse</button> -->
+                    <label>
+                        <input type="checkbox" id="terminosRegistro"> Acepto los términos y condiciones
+                    </label>
+                    <button id="btnEnviarRegistro" disabled>Registrarse</button>
+                </form>
+            </div>
+        </div>
+        
+     </main>
+
+    <div id="footer" class="footer"></div>
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/validacion.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>
